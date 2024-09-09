@@ -45,7 +45,7 @@ for i in range(9999):
     if f"GO_NEXT=&NEXT={index}" not in body:
         break
 
-with open("all_stock_prices.json", "w", encoding="utf-8") as json_file:
+with open("stock_prices.json", "w", encoding="utf-8") as json_file:
     json_file.write(json.dumps(prices, ensure_ascii=False, indent=4))
 
 # print(prices)

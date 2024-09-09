@@ -15,3 +15,8 @@
 3. `get_stock_prices.py`を実行します。以下のファイルが生成されます。
     - `stock_prices.json`: 全銘柄の終値一覧
 4. または、GitHub Actionsを使って定期的に実行します。同じくCI上で`stock_prices.json`が生成されます。
+
+## 記事
+
+- [日本株の全銘柄一覧をJSON形式で毎日更新・配信する「株JSON」をリリース](https://umihi.co/blog/20240908-kabu-json-release)
+- [日本株の全銘柄の終値一覧を毎日取得してJSONにするプログラムを公開しました](https://umihi.co/blog/20240909-kabu-json-all-close-prices-release)
