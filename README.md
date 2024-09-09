@@ -2,6 +2,8 @@
 
 日本株の全銘柄の終値一覧を毎日取得してJSONにするプログラムを公開しています。フォークして自由に利用してください。
 
+[![badge](https://github.com/umihico/kabu-json-all-stock-price-list/actions/workflows/auto-update.yml/badge.svg)](https://github.com/umihico/kabu-json-all-stock-price-list/actions/workflows/auto-update.yml)
+
 ## 注意事項
 
 [株価検索 | 日本取引所グループ](https://quote.jpx.co.jp/jpx/template/quote.cgi?F=tmp/stock_search)には以下の通り注意事項がありますので、取得した情報の利用にはご注意ください。
