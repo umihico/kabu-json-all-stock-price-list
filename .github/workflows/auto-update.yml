@@ -1,0 +1,22 @@
+name: auto-update
+
+on:
+  schedule:
+    - cron: "8 0 * * *" # 17pm JST
+  push: {}
+
+permissions:
+  contents: write
+
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Pip install
+        run: pip install -r requirements.txt
+      - name: Run script
+        run: python get_stock_prices.py
