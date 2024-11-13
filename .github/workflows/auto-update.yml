@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 jobs:
   auto-update:
@@ -20,3 +21,13 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run script
         run: python get_stock_prices.py
+      - name: Configure AWS Credentials for GitHub Actions
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          mask-aws-account-id: true
+          aws-region: ap-northeast-1
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/kabu-json-github-actions-role
+          role-session-name: github-actions-${{ github.job }}-${{ github.run_id }}-${{ github.run_number }}
+      - name: Upload to S3
+        run: |
+          aws s3 cp stock_prices.json s3://kabu-json-private-static-data-bucket/kabu-json-all-stock-price-list/v1/stock_prices.json --content-type application/json
